@@ -25,9 +25,9 @@ public class App
 		
 		//TODO loop in different nodes
 		id_1 = 12;
-		id_2 = 22;
+		id_2 = 1000;
 		StatementResult result = session.run(
-		"MATCH (n1:node {id: {id_start}}), (n2:node {id: {id_des}}), p = shortestPath((n1)-[*]->(n2))"
+		"MATCH (n1:node {id: {id_start}}), (n2:node {id: {id_des}}), p = shortestPath((n1)-[*]-(n2))"
  		+ " RETURN EXTRACT(n in NODES(p) | n.id) AS nodes",
 		parameters("id_start", id_1, "id_des", id_2));
 		
